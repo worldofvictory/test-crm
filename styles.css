@@ -1,0 +1,127 @@
+/* Загальні стилі */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar стилі */
+.sidebar {
+    width: 200px;
+    /* Sidebar за замовчуванням розгорнутий */
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: width 0.3s;
+    overflow: hidden;
+}
+
+.sidebar.collapsed {
+    width: 60px;
+}
+
+.sidebar .logo {
+    margin: 10px 0;
+    width: 100px;
+    transition: width 0.3s;
+}
+
+.sidebar.collapsed .logo {
+    width: 40px;
+}
+
+.sidebar .toggle-btn {
+    margin: 10px 0;
+    background-color: #444;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 180px;
+    transition: width 0.3s;
+}
+
+.sidebar.collapsed .toggle-btn {
+    width: 40px;
+}
+
+.sidebar .user-photo {
+    margin: 10px 0;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    transition: width 0.3s, height 0.3s;
+}
+
+.sidebar.collapsed .user-photo {
+    width: 40px;
+    height: 40px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.sidebar.collapsed ul {
+    display: none;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+    text-align: left;
+    padding: 0 10px;
+}
+
+/* Контент */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow: auto;
+}
+
+/* Таблиця */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f4f4f4;
+}
+
+/* Медійні запити */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+        /* Згорнутий вигляд на мобільних */
+    }
+
+    .sidebar.expanded {
+        width: 150px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
+@media (min-width: 769px) {
+    .toggle-btn {
+        display: none;
+    }
+}
